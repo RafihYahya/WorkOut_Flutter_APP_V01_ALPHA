@@ -72,7 +72,7 @@ class _HomePageState extends State<HomePage> {
           appBar: AppBar(
             title: const Center(
                 child: Text(
-              'MY WORKOUT ',
+              ' WORKOUT ',
               style: TextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold,
@@ -80,7 +80,7 @@ class _HomePageState extends State<HomePage> {
             )),
             elevation: 0,
             backgroundColor: const Color.fromARGB(90, 0, 0, 0),
-            leading: const Icon(Icons.menu),
+            //leading: const Icon(Icons.menu),
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: (() => createNewWorkout(context)),
@@ -91,6 +91,19 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           backgroundColor: Colors.grey[900],
+          drawer: Drawer(
+            backgroundColor: Colors.grey.shade900,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ListView(
+                children: [
+                  Text('placegolder'),
+                  Text('placegolder'),
+                  Text('placegolder'),
+                ],
+              ),
+            ),
+          ),
           body: Row(
             children: [
               (screenWidth > 600)
@@ -106,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                 child: Padding(
                   padding: const EdgeInsets.all(24.0),
                   child: ListView.builder(
-                    physics: const BouncingScrollPhysics(),
+                      physics: const BouncingScrollPhysics(),
                       itemCount: value.gettotalworkout(),
                       itemBuilder: (context, index) => Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -153,4 +166,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-

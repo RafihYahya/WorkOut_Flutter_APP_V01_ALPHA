@@ -33,9 +33,9 @@ class NewWidget extends StatefulWidget {
 class _NewWidgetState extends State<NewWidget> {
   int index = 0;
   final List<Widget> routes = [
+    const Allexec(),
     const HomePage(),
     const RemExec(),
-    const Allexec(),
   ];
   void updateindex(int value) {
     setState(() {

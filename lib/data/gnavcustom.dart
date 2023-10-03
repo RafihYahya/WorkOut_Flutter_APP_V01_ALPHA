@@ -52,7 +52,7 @@ class _GnavcustomState extends State<Gnavcustom> {
                     ),
                     GButton(
                         icon: Icons.explore,
-                        text: 'Exercice',
+                        text: 'Rest',
                         textStyle: TextStyle(
                             fontSize: 14.0,
                             letterSpacing: 1.2,
