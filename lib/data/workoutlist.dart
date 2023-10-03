@@ -18,8 +18,7 @@ class WorkOutList extends ChangeNotifier {
       exercise: [
         Exercise(name: 'Bench Press', wheight: '55Kg', reps: '10', sets: '3'),
         Exercise(name: 'Lateral Raises', wheight: '5Kg', reps: '13', sets: '4'),
-        Exercise(
-            name: 'Dumpbell Press', wheight: '55Kg', reps: '10', sets: '3'),
+        Exercise(name: 'Dumpbell Press', wheight: '55Kg', reps: '10', sets: '3')
       ],
     ),
     Workout(
