@@ -1,0 +1,6 @@
+values.workoutlist
+                      .map((workout) => workout.exercise
+                          .where((exercice) => exercice.isCompleted == false))
+                      .length
+
+                      

@@ -54,12 +54,15 @@ class _ListviewHorizonState extends State<ListviewHorizon> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      controller: ScrollController(
+        keepScrollOffset: false,
+      ),
       scrollDirection: Axis.vertical,
       itemCount: widget.values.workoutlist.length,
       shrinkWrap: true,
       physics: const ClampingScrollPhysics(),
       itemBuilder: (context, index) => Padding(
-        padding: const EdgeInsets.all(24.0),
+        padding: const EdgeInsets.symmetric(vertical: 24.0, horizontal: 0),
         child: SizedBox(
           height: 200,
           child: Column(
@@ -71,11 +74,12 @@ class _ListviewHorizonState extends State<ListviewHorizon> {
                     children: [
                       Container(
                           height: 60,
-                          padding: const EdgeInsets.all(10.0),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 10.0, horizontal: 25.0),
                           child: Text(
                             widget.values.workoutlist[index].name,
                             style: const TextStyle(
-                                fontSize: 32.0, fontWeight: FontWeight.w600),
+                                fontSize: 28.0, fontWeight: FontWeight.w600),
                           )),
                     ],
                   )),
