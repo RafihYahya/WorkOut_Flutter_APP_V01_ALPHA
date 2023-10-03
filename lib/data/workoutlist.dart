@@ -7,13 +7,26 @@ class WorkOutList extends ChangeNotifier {
     Workout(
       name: 'Back Workout',
       exercise: [
-        Exercise(name: 'bicepsCurl', wheight: '12Kg', reps: '10', sets: '3')
+        Exercise(name: 'Dead Lift', wheight: '70Kg', reps: '10', sets: '3'),
+        Exercise(name: 'Latpull Down', wheight: '55Kg', reps: '10', sets: '3'),
+        Exercise(name: 'Rows', wheight: '75Kg', reps: '10', sets: '3'),
+        Exercise(name: 'PlaceHolder', wheight: '70Kg', reps: '10', sets: '3')
       ],
     ),
     Workout(
       name: 'Chest Workout',
       exercise: [
-        Exercise(name: 'bench Press', wheight: '55Kg', reps: '10', sets: '3')
+        Exercise(name: 'Bench Press', wheight: '55Kg', reps: '10', sets: '3'),
+        Exercise(name: 'Lateral Raises', wheight: '5Kg', reps: '13', sets: '4'),
+        Exercise(
+            name: 'Dumpbell Press', wheight: '55Kg', reps: '10', sets: '3'),
+      ],
+    ),
+    Workout(
+      name: 'Leg Workout',
+      exercise: [
+        Exercise(name: 'Leg Press', wheight: '70Kg', reps: '10', sets: '3'),
+        Exercise(name: 'Squat', wheight: '70Kg', reps: '10', sets: '3')
       ],
     )
   ];
