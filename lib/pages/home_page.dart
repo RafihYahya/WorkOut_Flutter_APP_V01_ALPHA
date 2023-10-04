@@ -1,12 +1,15 @@
 // import 'dart:js';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Comp/my_drawer.dart';
 import 'package:flutter_application_1/data/workoutlist.dart';
 import 'package:flutter_application_1/pages/workout_page.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  final Function(int) callback2;
+
+  const HomePage({Key? key, required this.callback2}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -91,18 +94,9 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           backgroundColor: Colors.grey[900],
-          drawer: Drawer(
-            backgroundColor: Colors.grey.shade900,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ListView(
-                children: [
-                  Text('placegolder'),
-                  Text('placegolder'),
-                  Text('placegolder'),
-                ],
-              ),
-            ),
+          drawer: my_drawer(
+            callback2: widget.callback2,
+            j: 1,
           ),
           body: Row(
             children: [

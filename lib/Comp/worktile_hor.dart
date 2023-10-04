@@ -15,10 +15,10 @@ class WorkTileH extends StatefulWidget {
       : super(key: key);
 
   @override
-  _WorkTileHState createState() => _WorkTileHState();
+  WorkTileHState createState() => WorkTileHState();
 }
 
-class _WorkTileHState extends State<WorkTileH> {
+class WorkTileHState extends State<WorkTileH> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(

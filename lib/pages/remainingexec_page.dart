@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Comp/my_drawer.dart';
 import 'package:flutter_application_1/data/workout.dart';
 import 'package:flutter_application_1/data/workoutlist.dart';
 import 'package:flutter_application_1/pages/exerc_descrip_page.dart';
 import 'package:provider/provider.dart';
 
 class RemExec extends StatefulWidget {
-  const RemExec({super.key});
+  final Function(int) callback2;
+
+  const RemExec({super.key, required this.callback2});
 
   @override
   State<RemExec> createState() => _RemExecState();
@@ -51,8 +54,8 @@ class _RemExecState extends State<RemExec> {
                       size: 25.0,
                       color: Colors.yellow.shade700,
                     ),
-                    SizedBox(width: 10.0),
-                    Text(
+                    const SizedBox(width: 10.0),
+                    const Text(
                       'Press To Complete',
                       style: TextStyle(fontSize: 14.0),
                     ),
@@ -60,6 +63,10 @@ class _RemExecState extends State<RemExec> {
                 ),
                 backgroundColor: Colors.black45,
                 elevation: 0,
+              ),
+              drawer: my_drawer(
+                callback2: widget.callback2,
+                j: 1,
               ),
               backgroundColor: Colors.grey[900],
               body: Padding(

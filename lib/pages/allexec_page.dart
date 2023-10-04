@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Comp/my_drawer.dart';
 import 'package:flutter_application_1/Comp/worktile_hor.dart';
 import 'package:flutter_application_1/data/workoutlist.dart';
 import 'package:provider/provider.dart';
 
 class Allexec extends StatefulWidget {
-  const Allexec({super.key});
+  final Function(int) callback2;
+
+  const Allexec({super.key, required this.callback2});
 
   @override
   State<Allexec> createState() => _AllexecState();
@@ -25,7 +28,10 @@ class _AllexecState extends State<Allexec> {
           )),
           elevation: 0,
           backgroundColor: const Color.fromARGB(90, 0, 0, 0),
-          leading: const Icon(Icons.menu),
+        ),
+        drawer: my_drawer(
+          callback2: widget.callback2,
+          j: 1,
         ),
         backgroundColor: Colors.grey.shade900,
         body: Consumer<WorkOutList>(

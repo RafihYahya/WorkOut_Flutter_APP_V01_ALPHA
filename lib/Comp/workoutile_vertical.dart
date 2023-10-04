@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
 class Worktile extends StatefulWidget {
-  Worktile({Key? key}) : super(key: key);
+  const Worktile({Key? key}) : super(key: key);
 
   @override
-  _WorktileState createState() => _WorktileState();
+  WorktileState createState() => WorktileState();
 }
 
-class _WorktileState extends State<Worktile> {
+class WorktileState extends State<Worktile> {
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(
+        const Expanded(
             flex: 1,
             child: SizedBox(
               width: 10.0,
@@ -22,7 +22,8 @@ class _WorktileState extends State<Worktile> {
           child: Padding(
             padding: const EdgeInsets.all(12.0),
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 26.0),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 16.0, vertical: 26.0),
               decoration: BoxDecoration(
                 color: Colors.black54,
                 borderRadius: BorderRadius.circular(12.0),
@@ -42,7 +43,7 @@ class _WorktileState extends State<Worktile> {
             ),
           ),
         ),
-        Expanded(
+        const Expanded(
             flex: 1,
             child: SizedBox(
               width: 10.0,

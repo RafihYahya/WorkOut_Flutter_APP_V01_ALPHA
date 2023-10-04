@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/data/workoutlist.dart';
 import 'package:flutter_application_1/pages/allexec_page.dart';
+import 'package:flutter_application_1/pages/graph_page.dart';
 import 'package:flutter_application_1/pages/home_page.dart';
 import 'package:flutter_application_1/pages/remainingexec_page.dart';
 
@@ -32,11 +33,7 @@ class NewWidget extends StatefulWidget {
 
 class _NewWidgetState extends State<NewWidget> {
   int index = 0;
-  final List<Widget> routes = [
-    const Allexec(),
-    const HomePage(),
-    const RemExec(),
-  ];
+
   void updateindex(int value) {
     setState(() {
       index = value;
@@ -45,14 +42,21 @@ class _NewWidgetState extends State<NewWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final List<Widget> routes = [
+      Allexec(callback2: updateindex),
+      HomePage(callback2: updateindex),
+      RemExec(callback2: updateindex),
+      GraphPage(callback2: updateindex)
+    ];
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       home: Scaffold(
-        backgroundColor: Colors.grey.shade900,
-        body: routes[index],
-        bottomNavigationBar: Gnavcustom(callback: updateindex),
-      ),
+          backgroundColor: Colors.grey.shade900,
+          body: routes[index],
+          bottomNavigationBar:
+              index != 3 ? Gnavcustom(callback: updateindex) : const SizedBox()),
     );
   }
 }

@@ -12,8 +12,8 @@ class ExecDesc extends StatelessWidget {
         backgroundColor: Colors.black54,
         elevation: 0,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
+      body: const Padding(
+        padding: EdgeInsets.all(8.0),
         child: Center(
           child: Column(
             children: [
