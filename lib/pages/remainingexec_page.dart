@@ -43,6 +43,8 @@ class _RemExecState extends State<RemExec> {
   @override
   Widget build(BuildContext context) {
     List totalincExec = allimcpexec(context);
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Consumer<WorkOutList>(
         builder: (context, values, child) => Scaffold(
               appBar: AppBar(
@@ -61,7 +63,7 @@ class _RemExecState extends State<RemExec> {
                     ),
                   ],
                 ),
-                backgroundColor: Colors.black45,
+                backgroundColor: Colors.black54,
                 elevation: 0,
               ),
               drawer: my_drawer(
@@ -69,77 +71,94 @@ class _RemExecState extends State<RemExec> {
                 j: 1,
               ),
               backgroundColor: Colors.grey[900],
-              body: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ListView.builder(
-                  itemCount: totalincExec.length,
-                  itemBuilder: (context, index) => Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ListTile(
-                      subtitle: Row(
-                        children: [
-                          Expanded(
-                            child: Card(
-                              margin: const EdgeInsets.all(8.0),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                  'Reps ${totalincExec[index].reps}',
+              body: Row(
+                children: [
+                  (screenWidth > 1000)
+                      ? Expanded(
+                          flex: 1,
+                          child: Container(
+                            color: Colors.black38,
+                            margin: EdgeInsets.only(right: 68),
+                          ),
+                        )
+                      : SizedBox(),
+                  Expanded(
+                    flex: 3,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ListView.builder(
+                        itemCount: totalincExec.length,
+                        itemBuilder: (context, index) => Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: ListTile(
+                            subtitle: Row(
+                              children: [
+                                Expanded(
+                                  child: Card(
+                                    margin: const EdgeInsets.all(8.0),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Text(
+                                        'Reps ${totalincExec[index].reps}',
+                                      ),
+                                    ),
+                                  ),
                                 ),
+                                Expanded(
+                                  child: Card(
+                                    margin: const EdgeInsets.all(8.0),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Text(
+                                        'Sets ${totalincExec[index].sets}',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Card(
+                                    margin: const EdgeInsets.all(8.0),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Text(
+                                        'Weight ${totalincExec[index].wheight}',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            contentPadding: const EdgeInsets.symmetric(
+                                horizontal: 14.0, vertical: 6.0),
+                            tileColor: Colors.black45,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            title: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                totalincExec[index].name,
+                                style: const TextStyle(
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.w500),
                               ),
                             ),
+                            onTap: () => {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ExecDesc(
+                                          execprop: totalincExec[index])))
+                            },
+                            onLongPress: () => setState(() {
+                              totalincExec[index].isCompleted = true;
+                            }),
                           ),
-                          Expanded(
-                            child: Card(
-                              margin: const EdgeInsets.all(8.0),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                  'Sets ${totalincExec[index].sets}',
-                                ),
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            child: Card(
-                              margin: const EdgeInsets.all(8.0),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                  'Weight ${totalincExec[index].wheight}',
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      contentPadding: const EdgeInsets.symmetric(
-                          horizontal: 14.0, vertical: 6.0),
-                      tileColor: Colors.black45,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      title: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          totalincExec[index].name,
-                          style: const TextStyle(
-                              fontSize: 18.0, fontWeight: FontWeight.w500),
                         ),
                       ),
-                      onTap: () => {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    ExecDesc(execprop: totalincExec[index])))
-                      },
-                      onLongPress: () => setState(() {
-                        totalincExec[index].isCompleted = true;
-                      }),
                     ),
                   ),
-                ),
+                ],
               ),
             ));
   }
