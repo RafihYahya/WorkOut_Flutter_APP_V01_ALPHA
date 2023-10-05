@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/data/exercise.dart';
+import 'package:flutter_application_1/data/workout.dart';
 import 'package:flutter_application_1/data/workoutlist.dart';
 import 'package:provider/provider.dart';
 
@@ -109,8 +111,19 @@ class _WorkoutPageState extends State<WorkoutPage> {
     exercicew.clear();
   }
 
+  Workout? getvaluefromprovider(WorkOutList temp, Workout? exercisex) {
+    if (exercisex != null) {
+      return exercisex;
+    } else {
+      exercisex = temp.workoutlist
+          .firstWhere((workout) => workout.name == widget.title);
+      return exercisex;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    Workout? exercicex;
     return Consumer<WorkOutList>(
         builder: (context, values, child) => Scaffold(
               appBar: AppBar(
@@ -129,10 +142,8 @@ class _WorkoutPageState extends State<WorkoutPage> {
               body: Padding(
                 padding: const EdgeInsets.all(24.0),
                 child: ListView.builder(
-                  itemCount: values.workoutlist
-                      .firstWhere((workout) => workout.name == widget.title)
-                      .exercise
-                      .length,
+                  itemCount:
+                      getvaluefromprovider(values, exercicex)!.exercise.length,
                   itemBuilder: (context, index) => Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: ListTile(
@@ -141,13 +152,10 @@ class _WorkoutPageState extends State<WorkoutPage> {
                           Expanded(
                             child: GestureDetector(
                               onTap: () => setState(() {
-                                values.workoutlist
-                                    .firstWhere((workout) =>
-                                        workout.name == widget.title)
+                                getvaluefromprovider(values, exercicex)!
                                     .exercise[index]
-                                    .reps = (int.parse(values.workoutlist
-                                            .firstWhere((workout) =>
-                                                workout.name == widget.title)
+                                    .reps = (int.parse(getvaluefromprovider(
+                                                values, exercicex)!
                                             .exercise[index]
                                             .reps) +
                                         1)
@@ -158,7 +166,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: Text(
-                                    'Reps ${values.workoutlist.firstWhere((workout) => workout.name == widget.title).exercise[index].reps}',
+                                    'Reps ${getvaluefromprovider(values, exercicex)!.exercise[index].reps}',
                                   ),
                                 ),
                               ),
@@ -167,13 +175,10 @@ class _WorkoutPageState extends State<WorkoutPage> {
                           Expanded(
                             child: GestureDetector(
                               onTap: () => setState(() {
-                                values.workoutlist
-                                    .firstWhere((workout) =>
-                                        workout.name == widget.title)
+                                getvaluefromprovider(values, exercicex)!
                                     .exercise[index]
-                                    .sets = (int.parse(values.workoutlist
-                                            .firstWhere((workout) =>
-                                                workout.name == widget.title)
+                                    .sets = (int.parse(getvaluefromprovider(
+                                                values, exercicex)!
                                             .exercise[index]
                                             .sets) +
                                         1)
@@ -184,7 +189,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: Text(
-                                    'Sets ${values.workoutlist.firstWhere((workout) => workout.name == widget.title).exercise[index].sets}',
+                                    'Sets ${getvaluefromprovider(values, exercicex)!.exercise[index].sets}',
                                   ),
                                 ),
                               ),
@@ -193,19 +198,17 @@ class _WorkoutPageState extends State<WorkoutPage> {
                           Expanded(
                             child: GestureDetector(
                               onTap: () => setState(() {
-                                values.workoutlist
-                                        .firstWhere((workout) =>
-                                            workout.name == widget.title)
+                                getvaluefromprovider(values, exercicex)!
                                         .exercise[index]
                                         .wheight =
-                                    '${int.parse(values.workoutlist.firstWhere((workout) => workout.name == widget.title).exercise[index].wheight.substring(0, 2)) + 5} Kg';
+                                    '${int.parse(getvaluefromprovider(values, exercicex)!.exercise[index].wheight.substring(0, 2)) + 5} Kg';
                               }),
                               child: Card(
                                 margin: const EdgeInsets.all(8.0),
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: Text(
-                                    'Weight ${values.workoutlist.firstWhere((workout) => workout.name == widget.title).exercise[index].wheight}',
+                                    'Weight ${getvaluefromprovider(values, exercicex)!.exercise[index].wheight}',
                                   ),
                                 ),
                               ),
@@ -215,9 +218,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
                       ),
                       contentPadding: const EdgeInsets.symmetric(
                           horizontal: 16.0, vertical: 8.0),
-                      tileColor: !values.workoutlist
-                              .firstWhere(
-                                  (workout) => workout.name == widget.title)
+                      tileColor: !getvaluefromprovider(values, exercicex)!
                               .exercise[index]
                               .isCompleted
                           ? Colors.black38
@@ -228,9 +229,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
                       title: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
-                          values.workoutlist
-                              .firstWhere(
-                                  (workout) => workout.name == widget.title)
+                          getvaluefromprovider(values, exercicex)!
                               .exercise[index]
                               .name
                               .toString(),
@@ -240,30 +239,22 @@ class _WorkoutPageState extends State<WorkoutPage> {
                       ),
                       onTap: () => {
                         setState(() {
-                          values.workoutlist
-                                  .firstWhere(
-                                      (workout) => workout.name == widget.title)
+                          getvaluefromprovider(values, exercicex)!
                                   .exercise[index]
                                   .isCompleted =
-                              !values.workoutlist
-                                  .firstWhere(
-                                      (workout) => workout.name == widget.title)
+                              !getvaluefromprovider(values, exercicex)!
                                   .exercise[index]
                                   .isCompleted;
                         })
                       },
                       trailing: Checkbox(
-                          value: values.workoutlist
-                              .firstWhere(
-                                  (workout) => workout.name == widget.title)
+                          value: getvaluefromprovider(values, exercicex)!
                               .exercise[index]
                               .isCompleted,
                           checkColor: Colors.black,
                           onChanged: (bool? value) {
                             setState(() {
-                              values.workoutlist
-                                  .firstWhere(
-                                      (workout) => workout.name == widget.title)
+                              getvaluefromprovider(values, exercicex)!
                                   .exercise[index]
                                   .isCompleted = value!;
                             });
