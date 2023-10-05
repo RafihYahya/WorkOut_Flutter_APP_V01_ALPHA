@@ -12,11 +12,12 @@ class ExecDesc extends StatelessWidget {
         backgroundColor: Colors.black54,
         elevation: 0,
       ),
+      backgroundColor: Colors.grey.shade900,
       body: Column(
         children: [
           Container(
-            height: 200,
-            color: Colors.redAccent,
+            height: 175,
+            color: Colors.red.shade400,
           ),
           SizedBox(
             height: 25.0,
@@ -26,40 +27,76 @@ class ExecDesc extends StatelessWidget {
                 const EdgeInsets.symmetric(vertical: 12.0, horizontal: 18.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Column(
                   children: [
-                    Text('Miaw'),
-                    Text('niaw'),
+                    Text(
+                      execprop.desc!.title,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 24.0,
+                          letterSpacing: 1.75),
+                    ),
+                    Text(
+                      'niaw',
+                      style: TextStyle(fontSize: 12.0),
+                    ),
                   ],
                 ),
-                Text('Niaw'),
+                Icon(
+                  Icons.star_border,
+                  size: 32.0,
+                ),
               ],
             ),
           ),
           SizedBox(
             height: 10.0,
           ),
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(vertical: 10.0, horizontal: 18.0),
-            child: Text(
-              'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-              textAlign: TextAlign.center,
+          Expanded(
+            flex: 4,
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 10.0, horizontal: 18.0),
+              child: Text(
+                execprop.desc!.desc,
+                textAlign: TextAlign.justify,
+              ),
             ),
           ),
           SizedBox(
-            height: 68.0,
+            height: 50.0,
           ),
           Expanded(
             child: Container(
-              color: Colors.redAccent,
+              decoration: BoxDecoration(
+                  color: (execprop.desc!.danger == 'HARD')
+                      ? Colors.redAccent
+                      : Colors.greenAccent,
+                  borderRadius: BorderRadius.circular(6.0)),
               child: Row(
                 children: [
                   Expanded(
-                    child: Container(
+                    flex: 1,
+                    child: SizedBox(
                       height: 150,
-                      child: Center(child: Text('diffucwdjk')),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            width: 4.0,
+                          ),
+                          Text(
+                            execprop.desc!.danger,
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18.0,
+                                color: Colors.black,
+                                letterSpacing: 2),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],

@@ -43,8 +43,8 @@ class _NewWidgetState extends State<NewWidget> {
   @override
   Widget build(BuildContext context) {
     final List<Widget> routes = [
-      Allexec(callback2: updateindex),
       HomePage(callback2: updateindex),
+      Allexec(callback2: updateindex),
       RemExec(callback2: updateindex),
       GraphPage(callback2: updateindex)
     ];
@@ -55,8 +55,9 @@ class _NewWidgetState extends State<NewWidget> {
       home: Scaffold(
           backgroundColor: Colors.grey.shade900,
           body: routes[index],
-          bottomNavigationBar:
-              index != 3 ? Gnavcustom(callback: updateindex) : const SizedBox()),
+          bottomNavigationBar: index != 3
+              ? Gnavcustom(callback: updateindex)
+              : const SizedBox()),
     );
   }
 }

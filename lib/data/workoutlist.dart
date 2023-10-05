@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/data/exec_desc.dart';
 import 'package:flutter_application_1/data/exercise.dart';
 import 'package:flutter_application_1/data/workout.dart';
 
@@ -7,7 +8,15 @@ class WorkOutList extends ChangeNotifier {
     Workout(
       name: 'Back Workout',
       exercise: [
-        Exercise(name: 'Dead Lift', wheight: '70Kg', reps: '10', sets: '3'),
+        Exercise(
+            name: 'Dead Lift',
+            wheight: '70Kg',
+            reps: '10',
+            sets: '3',
+            desc: Description(
+                title: 'DEAD LIFT',
+                desc: 'Somethign something life is sad ok ok',
+                danger: 'HARD')),
         Exercise(name: 'Latpull Down', wheight: '55Kg', reps: '10', sets: '3'),
         Exercise(name: 'Rows', wheight: '75Kg', reps: '10', sets: '3'),
         Exercise(name: 'PlaceHolder', wheight: '70Kg', reps: '10', sets: '3')

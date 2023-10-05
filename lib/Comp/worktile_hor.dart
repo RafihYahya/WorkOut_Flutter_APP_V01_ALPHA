@@ -36,7 +36,7 @@ class WorkTileHState extends State<WorkTileH> {
                 padding: const EdgeInsets.symmetric(
                     horizontal: 20.0, vertical: 28.0),
                 decoration: BoxDecoration(
-                  color: Colors.black45,
+                  color: Colors.black38,
                   borderRadius: BorderRadius.circular(16.0),
                 ),
                 child: Row(

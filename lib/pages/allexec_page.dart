@@ -108,8 +108,9 @@ class _ListviewHorizonState extends State<ListviewHorizon> {
                                 child: Text(
                                   widget.values.workoutlist[index].name,
                                   style: const TextStyle(
-                                      fontSize: 28.0,
-                                      fontWeight: FontWeight.w600),
+                                      fontSize: 24.0,
+                                      fontWeight: FontWeight.w600,
+                                      letterSpacing: 1.5),
                                 )),
                           ],
                         )),
