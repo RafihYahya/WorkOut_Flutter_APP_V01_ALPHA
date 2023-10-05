@@ -45,10 +45,27 @@ class my_drawer extends StatelessWidget {
             child: ListTile(
               onTap: () => {callback2(3), Navigator.pop(context)},
               title: const Text(
-                'Graph Page',
+                'Graph View',
                 style: TextStyle(fontSize: 18.0),
               ),
               tileColor: j == 2 ? Colors.black54 : Colors.transparent,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 8.0,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+            child: ListTile(
+              onTap: () => {callback2(4), Navigator.pop(context)},
+              title: const Text(
+                'Calorie Calc',
+                style: TextStyle(fontSize: 18.0),
+              ),
+              tileColor: j == 3 ? Colors.black54 : Colors.transparent,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0),
               ),

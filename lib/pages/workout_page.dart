@@ -139,34 +139,74 @@ class _WorkoutPageState extends State<WorkoutPage> {
                       subtitle: Row(
                         children: [
                           Expanded(
-                            child: Card(
-                              margin: const EdgeInsets.all(8.0),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                  'Reps ${values.workoutlist.firstWhere((workout) => workout.name == widget.title).exercise[index].reps}',
+                            child: GestureDetector(
+                              onTap: () => setState(() {
+                                values.workoutlist
+                                    .firstWhere((workout) =>
+                                        workout.name == widget.title)
+                                    .exercise[index]
+                                    .reps = (int.parse(values.workoutlist
+                                            .firstWhere((workout) =>
+                                                workout.name == widget.title)
+                                            .exercise[index]
+                                            .reps) +
+                                        1)
+                                    .toString();
+                              }),
+                              child: Card(
+                                margin: const EdgeInsets.all(8.0),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    'Reps ${values.workoutlist.firstWhere((workout) => workout.name == widget.title).exercise[index].reps}',
+                                  ),
                                 ),
                               ),
                             ),
                           ),
                           Expanded(
-                            child: Card(
-                              margin: const EdgeInsets.all(8.0),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                  'Sets ${values.workoutlist.firstWhere((workout) => workout.name == widget.title).exercise[index].sets}',
+                            child: GestureDetector(
+                              onTap: () => setState(() {
+                                values.workoutlist
+                                    .firstWhere((workout) =>
+                                        workout.name == widget.title)
+                                    .exercise[index]
+                                    .sets = (int.parse(values.workoutlist
+                                            .firstWhere((workout) =>
+                                                workout.name == widget.title)
+                                            .exercise[index]
+                                            .sets) +
+                                        1)
+                                    .toString();
+                              }),
+                              child: Card(
+                                margin: const EdgeInsets.all(8.0),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    'Sets ${values.workoutlist.firstWhere((workout) => workout.name == widget.title).exercise[index].sets}',
+                                  ),
                                 ),
                               ),
                             ),
                           ),
                           Expanded(
-                            child: Card(
-                              margin: const EdgeInsets.all(8.0),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                  'Weight ${values.workoutlist.firstWhere((workout) => workout.name == widget.title).exercise[index].wheight}',
+                            child: GestureDetector(
+                              onTap: () => setState(() {
+                                values.workoutlist
+                                        .firstWhere((workout) =>
+                                            workout.name == widget.title)
+                                        .exercise[index]
+                                        .wheight =
+                                    '${int.parse(values.workoutlist.firstWhere((workout) => workout.name == widget.title).exercise[index].wheight.substring(0, 2)) + 5} Kg';
+                              }),
+                              child: Card(
+                                margin: const EdgeInsets.all(8.0),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    'Weight ${values.workoutlist.firstWhere((workout) => workout.name == widget.title).exercise[index].wheight}',
+                                  ),
                                 ),
                               ),
                             ),

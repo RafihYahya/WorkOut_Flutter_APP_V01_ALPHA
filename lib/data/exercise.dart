@@ -2,9 +2,9 @@ import 'package:flutter_application_1/data/exec_desc.dart';
 
 class Exercise {
   final String name;
-  final String wheight;
-  final String reps;
-  final String sets;
+  String wheight;
+  String reps;
+  String sets;
   final String? muscle;
   bool isCompleted;
   final Description? desc;

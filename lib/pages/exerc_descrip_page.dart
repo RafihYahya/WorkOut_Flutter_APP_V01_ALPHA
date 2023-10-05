@@ -17,7 +17,7 @@ class ExecDesc extends StatelessWidget {
         children: [
           Container(
             height: 175,
-            color: Colors.red.shade400,
+            color: Colors.black87,
           ),
           SizedBox(
             height: 25.0,

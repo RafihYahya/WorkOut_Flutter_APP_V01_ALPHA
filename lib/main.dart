@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/data/workoutlist.dart';
 import 'package:flutter_application_1/pages/allexec_page.dart';
+import 'package:flutter_application_1/pages/calorie_page.dart';
 import 'package:flutter_application_1/pages/graph_page.dart';
 import 'package:flutter_application_1/pages/home_page.dart';
 import 'package:flutter_application_1/pages/remainingexec_page.dart';
@@ -46,7 +47,8 @@ class _NewWidgetState extends State<NewWidget> {
       HomePage(callback2: updateindex),
       Allexec(callback2: updateindex),
       RemExec(callback2: updateindex),
-      GraphPage(callback2: updateindex)
+      GraphPage(callback2: updateindex),
+      CaloriePage(callback2: updateindex)
     ];
 
     return MaterialApp(
@@ -55,7 +57,7 @@ class _NewWidgetState extends State<NewWidget> {
       home: Scaffold(
           backgroundColor: const Color.fromARGB(255, 30, 30, 30),
           body: routes[index],
-          bottomNavigationBar: index != 3
+          bottomNavigationBar: index != 3 && index != 4
               ? Gnavcustom(callback: updateindex)
               : const SizedBox()),
     );
