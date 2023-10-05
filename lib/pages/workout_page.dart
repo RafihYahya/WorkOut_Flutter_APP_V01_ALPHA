@@ -14,7 +14,6 @@ final newworkoutController = TextEditingController();
 final exerciceset = TextEditingController();
 final exercicerep = TextEditingController();
 final exercicew = TextEditingController();
-final exercicedesc = TextEditingController();
 
 class _WorkoutPageState extends State<WorkoutPage> {
   void toggleexercice(
@@ -57,11 +56,6 @@ class _WorkoutPageState extends State<WorkoutPage> {
               decoration: const InputDecoration(
                   border: UnderlineInputBorder(), labelText: 'Amount of Sets'),
             ),
-            TextFormField(
-              controller: exercicedesc,
-              decoration: const InputDecoration(
-                  border: UnderlineInputBorder(), labelText: 'Description'),
-            ),
           ],
         ),
         actions: [
@@ -99,13 +93,12 @@ class _WorkoutPageState extends State<WorkoutPage> {
         exercicew.text,
         exercicerep.text,
         exerciceset.text,
-        exercicedesc.text);
+        'Empty');
     Navigator.pop(context);
     newworkoutController.clear();
     exercicerep.clear();
     exerciceset.clear();
     exercicew.clear();
-    exercicedesc.clear();
   }
 
   void cancel(BuildContext context) {
@@ -114,7 +107,6 @@ class _WorkoutPageState extends State<WorkoutPage> {
     exercicerep.clear();
     exerciceset.clear();
     exercicew.clear();
-    exercicedesc.clear();
   }
 
   @override
@@ -133,7 +125,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
                   color: Colors.white,
                 ),
               ),
-              backgroundColor: Colors.grey[900],
+              backgroundColor: const Color.fromARGB(255, 30, 30, 30),
               body: Padding(
                 padding: const EdgeInsets.all(24.0),
                 child: ListView.builder(

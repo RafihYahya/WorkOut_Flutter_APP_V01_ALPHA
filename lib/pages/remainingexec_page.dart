@@ -70,7 +70,7 @@ class _RemExecState extends State<RemExec> {
                 callback2: widget.callback2,
                 j: 1,
               ),
-              backgroundColor: Colors.grey[900],
+              backgroundColor: const Color.fromARGB(255, 30, 30, 30),
               body: Row(
                 children: [
                   (screenWidth > 1000)

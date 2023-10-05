@@ -6,9 +6,10 @@ class Description {
   final String desc;
   final String danger;
 
-  Description(
-      {this.image,
-      required this.title,
-      required this.desc,
-      required this.danger});
+  Description({
+    required this.title,
+    required this.desc,
+    required this.danger,
+    this.image,
+  });
 }

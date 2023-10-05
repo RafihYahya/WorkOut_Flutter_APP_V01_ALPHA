@@ -14,7 +14,7 @@ class GraphPage extends StatelessWidget {
         backgroundColor: const Color.fromARGB(90, 0, 0, 0),
         //leading: const Icon(Icons.menu),
       ),
-      backgroundColor: Colors.grey[900],
+      backgroundColor: const Color.fromARGB(255, 30, 30, 30),
       drawer: my_drawer(
         callback2: callback2,
         j: 2,

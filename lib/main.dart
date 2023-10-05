@@ -9,10 +9,10 @@ import 'package:provider/provider.dart';
 
 import 'data/gnavcustom.dart';
 
-void main() => runApp(const CofeeApp());
+void main() => runApp(const WorkoutApp());
 
-class CofeeApp extends StatelessWidget {
-  const CofeeApp({Key? key}) : super(key: key);
+class WorkoutApp extends StatelessWidget {
+  const WorkoutApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -53,7 +53,7 @@ class _NewWidgetState extends State<NewWidget> {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       home: Scaffold(
-          backgroundColor: Colors.grey.shade900,
+          backgroundColor: const Color.fromARGB(255, 30, 30, 30),
           body: routes[index],
           bottomNavigationBar: index != 3
               ? Gnavcustom(callback: updateindex)

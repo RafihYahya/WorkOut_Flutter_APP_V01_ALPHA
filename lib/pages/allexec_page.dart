@@ -33,7 +33,7 @@ class _AllexecState extends State<Allexec> {
           callback2: widget.callback2,
           j: 1,
         ),
-        backgroundColor: Colors.grey.shade900,
+        backgroundColor: const Color.fromARGB(255, 30, 30, 30),
         body: Consumer<WorkOutList>(
           builder: (context, values, index) => ListviewHorizon(
             context: context,

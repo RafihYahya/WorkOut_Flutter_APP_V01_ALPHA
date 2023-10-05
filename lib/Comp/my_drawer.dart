@@ -10,11 +10,11 @@ class my_drawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       width: 275,
-      backgroundColor: Colors.grey.shade900,
+      backgroundColor: const Color.fromARGB(255, 30, 30, 30),
       child: ListView(
         children: [
           const DrawerHeader(
-              decoration: BoxDecoration(color: Color.fromARGB(255, 19, 19, 19)),
+              decoration: BoxDecoration(color: Color.fromARGB(255, 15, 15, 15)),
               child: Center(
                   child: Icon(
                 Icons.flutter_dash,

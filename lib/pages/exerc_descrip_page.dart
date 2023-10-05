@@ -12,7 +12,7 @@ class ExecDesc extends StatelessWidget {
         backgroundColor: Colors.black54,
         elevation: 0,
       ),
-      backgroundColor: Colors.grey.shade900,
+      backgroundColor: const Color.fromARGB(255, 25, 25, 25),
       body: Column(
         children: [
           Container(
@@ -72,8 +72,8 @@ class ExecDesc extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                   color: (execprop.desc!.danger == 'HARD')
-                      ? Colors.redAccent
-                      : Colors.greenAccent,
+                      ? Color.fromARGB(255, 185, 58, 58)
+                      : Color.fromARGB(255, 78, 177, 129),
                   borderRadius: BorderRadius.circular(6.0)),
               child: Row(
                 children: [
