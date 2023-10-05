@@ -17,24 +17,74 @@ class WorkOutList extends ChangeNotifier {
                 title: 'DEAD LIFT',
                 desc: 'Somethign something life is sad ok ok',
                 danger: 'HARD')),
-        Exercise(name: 'Latpull Down', wheight: '55Kg', reps: '10', sets: '3'),
-        Exercise(name: 'Rows', wheight: '75Kg', reps: '10', sets: '3'),
-        Exercise(name: 'PlaceHolder', wheight: '70Kg', reps: '10', sets: '3')
+        Exercise(
+            name: 'Latpull Down',
+            wheight: '55Kg',
+            reps: '10',
+            sets: '3',
+            desc: Description(
+                title: 'LatPullDown',
+                desc: 'Lat pull down pull the lat down thats about it',
+                danger: 'EASY')),
+        Exercise(
+            name: 'Rows',
+            wheight: '75Kg',
+            reps: '10',
+            sets: '3',
+            desc: Description(
+                title: 'Placeholder', desc: 'Placeholder', danger: 'EASY')),
+        Exercise(
+            name: 'PlaceHolder',
+            wheight: '70Kg',
+            reps: '10',
+            sets: '3',
+            desc: Description(
+                title: 'Placeholder', desc: 'Placeholder', danger: 'EASY'))
       ],
     ),
     Workout(
       name: 'Chest Workout',
       exercise: [
-        Exercise(name: 'Bench Press', wheight: '55Kg', reps: '10', sets: '3'),
-        Exercise(name: 'Lateral Raises', wheight: '5Kg', reps: '13', sets: '4'),
-        Exercise(name: 'Dumpbell Press', wheight: '55Kg', reps: '10', sets: '3')
+        Exercise(
+            name: 'Bench Press',
+            wheight: '55Kg',
+            reps: '10',
+            sets: '3',
+            desc: Description(
+                title: 'Placeholder', desc: 'Placeholder', danger: 'EASY')),
+        Exercise(
+            name: 'Lateral Raises',
+            wheight: '5Kg',
+            reps: '13',
+            sets: '4',
+            desc: Description(
+                title: 'Placeholder', desc: 'Placeholder', danger: 'EASY')),
+        Exercise(
+            name: 'Dumpbell Press',
+            wheight: '55Kg',
+            reps: '10',
+            sets: '3',
+            desc: Description(
+                title: 'Placeholder', desc: 'Placeholder', danger: 'EASY'))
       ],
     ),
     Workout(
       name: 'Leg Workout',
       exercise: [
-        Exercise(name: 'Leg Press', wheight: '70Kg', reps: '10', sets: '3'),
-        Exercise(name: 'Squat', wheight: '70Kg', reps: '10', sets: '3')
+        Exercise(
+            name: 'Leg Press',
+            wheight: '70Kg',
+            reps: '10',
+            sets: '3',
+            desc: Description(
+                title: 'Placeholder', desc: 'Placeholder', danger: 'EASY')),
+        Exercise(
+            name: 'Squat',
+            wheight: '70Kg',
+            reps: '10',
+            sets: '3',
+            desc: Description(
+                title: 'Placeholder', desc: 'Placeholder', danger: 'EASY'))
       ],
     )
   ];
@@ -55,12 +105,16 @@ class WorkOutList extends ChangeNotifier {
   }
 
   void addexercice(String name, String exercicename, String weight, String reps,
-      String sets) {
+      String sets, String desc) {
     Workout rightfulworkout =
         workoutlist.firstWhere((workout) => workout.name == name);
 
-    rightfulworkout.exercise.add(
-        Exercise(name: exercicename, wheight: weight, reps: reps, sets: sets));
+    rightfulworkout.exercise.add(Exercise(
+        name: exercicename,
+        wheight: weight,
+        reps: reps,
+        sets: sets,
+        desc: Description(title: desc, desc: desc, danger: 'EASY')));
     notifyListeners();
   }
 

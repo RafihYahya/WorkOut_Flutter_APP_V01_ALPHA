@@ -14,6 +14,7 @@ final newworkoutController = TextEditingController();
 final exerciceset = TextEditingController();
 final exercicerep = TextEditingController();
 final exercicew = TextEditingController();
+final exercicedesc = TextEditingController();
 
 class _WorkoutPageState extends State<WorkoutPage> {
   void toggleexercice(
@@ -56,6 +57,11 @@ class _WorkoutPageState extends State<WorkoutPage> {
               decoration: const InputDecoration(
                   border: UnderlineInputBorder(), labelText: 'Amount of Sets'),
             ),
+            TextFormField(
+              controller: exercicedesc,
+              decoration: const InputDecoration(
+                  border: UnderlineInputBorder(), labelText: 'Description'),
+            ),
           ],
         ),
         actions: [
@@ -92,12 +98,14 @@ class _WorkoutPageState extends State<WorkoutPage> {
         newworkoutController.text,
         exercicew.text,
         exercicerep.text,
-        exerciceset.text);
+        exerciceset.text,
+        exercicedesc.text);
     Navigator.pop(context);
     newworkoutController.clear();
     exercicerep.clear();
     exerciceset.clear();
     exercicew.clear();
+    exercicedesc.clear();
   }
 
   void cancel(BuildContext context) {
@@ -106,6 +114,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
     exercicerep.clear();
     exerciceset.clear();
     exercicew.clear();
+    exercicedesc.clear();
   }
 
   @override
