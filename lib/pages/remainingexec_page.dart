@@ -78,10 +78,10 @@ class _RemExecState extends State<RemExec> {
                           flex: 1,
                           child: Container(
                             color: Colors.black38,
-                            margin: EdgeInsets.only(right: 68),
+                            margin: const EdgeInsets.only(right: 68),
                           ),
                         )
-                      : SizedBox(),
+                      : const SizedBox(),
                   Expanded(
                     flex: 3,
                     child: Padding(

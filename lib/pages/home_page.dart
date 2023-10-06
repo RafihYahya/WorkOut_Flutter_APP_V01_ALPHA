@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage> {
                   letterSpacing: 2.5),
             )),
             elevation: 0,
-            backgroundColor: Color.fromARGB(131, 0, 0, 0),
+            backgroundColor: const Color.fromARGB(131, 0, 0, 0),
             //leading: const Icon(Icons.menu),
           ),
           floatingActionButton: FloatingActionButton(
@@ -106,7 +106,7 @@ class _HomePageState extends State<HomePage> {
                       child: Container(
                         color: Colors.black38,
                         width: 30.0,
-                        margin: EdgeInsets.only(right: 68),
+                        margin: const EdgeInsets.only(right: 68),
                       ))
                   : Container(),
               (screenWidth > 600)

@@ -27,7 +27,7 @@ class _AllexecState extends State<Allexec> {
                 letterSpacing: 2.5),
           )),
           elevation: 0,
-          backgroundColor: Color.fromARGB(125, 0, 0, 0),
+          backgroundColor: const Color.fromARGB(125, 0, 0, 0),
         ),
         drawer: my_drawer(
           callback2: widget.callback2,
@@ -75,10 +75,10 @@ class _ListviewHorizonState extends State<ListviewHorizon> {
                 flex: 1,
                 child: Container(
                   color: Colors.black38,
-                  margin: EdgeInsets.only(right: 68.0),
+                  margin: const EdgeInsets.only(right: 68.0),
                 ),
               )
-            : SizedBox(),
+            : const SizedBox(),
         Expanded(
           flex: 3,
           child: ListView.builder(

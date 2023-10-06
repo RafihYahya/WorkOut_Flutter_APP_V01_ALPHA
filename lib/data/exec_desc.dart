@@ -1,7 +1,5 @@
-import 'package:flutter/material.dart';
-
 class Description {
-  final Image? image;
+  final String image;
   final String title;
   final String desc;
   final String danger;
@@ -10,6 +8,6 @@ class Description {
     required this.title,
     required this.desc,
     required this.danger,
-    this.image,
+    this.image = '',
   });
 }
