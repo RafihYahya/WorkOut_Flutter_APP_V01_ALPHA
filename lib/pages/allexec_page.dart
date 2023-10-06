@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Comp/my_drawer.dart';
 import 'package:flutter_application_1/Comp/worktile_hor.dart';
 import 'package:flutter_application_1/data/workoutlist.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class Allexec extends StatefulWidget {
@@ -107,10 +108,12 @@ class _ListviewHorizonState extends State<ListviewHorizon> {
                                     vertical: 10.0, horizontal: 25.0),
                                 child: Text(
                                   widget.values.workoutlist[index].name,
-                                  style: const TextStyle(
-                                      fontSize: 24.0,
-                                      fontWeight: FontWeight.w600,
-                                      letterSpacing: 1.5),
+                                  style: GoogleFonts.lato(
+                                      textStyle: const TextStyle(
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 26.0,
+                                          wordSpacing: 1.2,
+                                          letterSpacing: 1.2)),
                                 )),
                           ],
                         )),

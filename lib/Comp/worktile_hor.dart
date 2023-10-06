@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/data/workoutlist.dart';
 import 'package:flutter_application_1/pages/exerc_descrip_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class WorkTileH extends StatefulWidget {
   final BuildContext context;
@@ -48,20 +49,32 @@ class WorkTileHState extends State<WorkTileH> {
                           widget.values.workoutlist[widget.index2]
                               .exercise[index].name
                               .toUpperCase(),
-                          style: const TextStyle(
-                              fontSize: 18.0, fontWeight: FontWeight.w600),
+                          style: GoogleFonts.lato(
+                              textStyle: const TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 20.0,
+                                  wordSpacing: 1.2,
+                                  letterSpacing: 1.4)),
                         ),
                         const SizedBox(height: 4.0),
                         Row(
                           children: [
                             Text(
                               'Sets ${widget.values.workoutlist[widget.index2].exercise[index].sets}',
-                              style: const TextStyle(fontSize: 12.0),
+                              style: GoogleFonts.lato(
+                                  textStyle: const TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 12.0,
+                              )),
                             ),
                             const SizedBox(width: 10.0),
                             Text(
                               'Reps ${widget.values.workoutlist[widget.index2].exercise[index].reps}',
-                              style: const TextStyle(fontSize: 12.0),
+                              style: GoogleFonts.lato(
+                                  textStyle: const TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 12.0,
+                              )),
                             ),
                           ],
                         ),
@@ -69,7 +82,11 @@ class WorkTileHState extends State<WorkTileH> {
                         Expanded(
                           child: Text(
                             'Weight  ${widget.values.workoutlist[widget.index2].exercise[index].wheight}',
-                            style: const TextStyle(fontSize: 12.0),
+                            style: GoogleFonts.lato(
+                                textStyle: const TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 12.0,
+                            )),
                           ),
                         ),
                       ],

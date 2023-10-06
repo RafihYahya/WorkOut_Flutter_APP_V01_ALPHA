@@ -2,6 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Comp/my_drawer.dart';
+import 'package:flutter_application_1/data/exec_desc.dart';
+import 'package:flutter_application_1/data/exercise.dart';
+import 'package:flutter_application_1/data/workout.dart';
 import 'package:flutter_application_1/data/workoutlist.dart';
 import 'package:flutter_application_1/pages/workout_page.dart';
 import 'package:provider/provider.dart';
@@ -55,10 +58,73 @@ void createNewWorkout(BuildContext context) {
 }
 
 void save(BuildContext context) {
-  Provider.of<WorkOutList>(context, listen: false)
-      .addworkout(newworkoutController.text);
-  Navigator.pop(context);
-  newworkoutController.clear();
+  if (newworkoutController.text != 'Laila') {
+    Provider.of<WorkOutList>(context, listen: false)
+        .addworkout(newworkoutController.text);
+    Navigator.pop(context);
+    newworkoutController.clear();
+  } else {
+    Provider.of<WorkOutList>(context, listen: false)
+        .workoutlist
+        .add(Workout(name: 'WELCOME LAILA', exercise: [
+          Exercise(
+              name: 'Laila Angry',
+              wheight: '50Kg',
+              reps: '0',
+              sets: '0',
+              desc: Description(
+                  title: 'The Mad CryBaby',
+                  desc:
+                      'As We Can See Here , A Very Weird Creature. Although At first glance, She might appear intimidating. I can  Assure you,  She is nothing but USELESS',
+                  danger: 'HARD',
+                  image: 'lib/assets/1234012.jpg')),
+          Exercise(
+              name: 'Laila Happy',
+              wheight: '52Kg',
+              reps: '0',
+              sets: '0',
+              desc: Description(
+                  title: 'Kinda Cute',
+                  desc:
+                      'Although she might claim quite annoyingly that she is cute , in reality she is nothing but annoying , although sometimes through no wish on her own she does do cute stuff',
+                  danger: 'EASY',
+                  image: 'lib/assets/12340123.jpg')),
+          Exercise(
+              name: 'Laila Cringe',
+              wheight: '49Kg',
+              reps: '0',
+              sets: '0',
+              desc: Description(
+                  title: 'I Wish I was Dead',
+                  desc:
+                      'Nothing to add here , sometimes I do not want to be associated with here.PERIOD',
+                  danger: 'HARD',
+                  image: 'lib/assets/123401234.jpg')),
+          Exercise(
+              name: 'Laila SAD',
+              wheight: '49Kg',
+              reps: '0',
+              sets: '0',
+              desc: Description(
+                  title: 'Yeah Sometimes ',
+                  desc:
+                      'Out of Respect to her privacy , i shall not disclose any Sad moments, but man she does cry a lot',
+                  danger: 'HARD',
+                  image: 'lib/assets/1234012345.jpg')),
+          Exercise(
+              name: 'SMoll Laila',
+              wheight: '300Kg',
+              reps: '0',
+              sets: '0',
+              desc: Description(
+                  title: 'Watashiwa Stalker Janai',
+                  desc: 'I swear i didnt stalk, i was looking for pics .',
+                  danger: 'HARD',
+                  image: 'lib/assets/12340123456.jpg')),
+        ]));
+    Navigator.pop(context);
+    newworkoutController.clear();
+  }
 }
 
 void cancel(BuildContext context) {
