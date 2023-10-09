@@ -41,7 +41,7 @@ class WorkOutList extends ChangeNotifier {
                 title: 'Bent-Over Row',
                 desc:
                     'Lift the bar from the rack, bend forward at the hips, and keep the back straight with a slight bend in the knees. Lower the bar towards the floor until the elbows are completely straight, and keep the back flat as the bar is pulled towards the belly button. Then slowly lower the bar to the starting position and repeat.',
-                danger: 'EASY',
+                danger: 'HARD',
                 image: '${asset}exec03.webp')),
         Exercise(
             name: 'Pull-Up',
@@ -52,7 +52,7 @@ class WorkOutList extends ChangeNotifier {
                 title: 'Pull-Up',
                 desc:
                     'A pull-up is an upper-body exercise that involves hanging from a pull-up bar by your hands with your palms facing away from you, and lifting your entire body up with your arm and back muscles until your chest touches the bar.',
-                danger: 'EASY',
+                danger: 'HARD',
                 image: '${asset}exec04.webp')),
         Exercise(
             name: 'Seated Row',
@@ -227,7 +227,7 @@ class WorkOutList extends ChangeNotifier {
                 title: 'Squat',
                 desc:
                     'an exercise in which a standing person lowers to a position in which the torso is erect and the knees are deeply bent and then rises to an upright position. Note: A squat can be done while holding weights, with a barbell on the upper back, or without weights.',
-                danger: 'EASY',
+                danger: 'HARD',
                 image: '${asset}exec18.webp')),
         Exercise(
             name: 'Hip Thrusts',
@@ -260,7 +260,7 @@ class WorkOutList extends ChangeNotifier {
                 title: 'Romanian Deadlift',
                 desc:
                     'A Romanian Deadlift (RDL) is a deadlift in which the body is bent at the hips and the knees are not bent. The deadlift is a strengthening exercise where a loaded barbell is lifted off the ground from a stabilized, bent over position, knees free to bend.',
-                danger: 'EASY',
+                danger: 'HARD',
                 image: '${asset}exec21.gif')),
         Exercise(
             name: 'Split Squat',
@@ -318,12 +318,12 @@ class WorkOutList extends ChangeNotifier {
                 danger: 'EASY',
                 image: '${asset}exec26.webp')),
         Exercise(
-            name: 'ABS Crunch',
+            name: 'Abs Crunch',
             wheight: '50Kg',
             reps: '15',
             sets: '4',
             desc: Description(
-                title: 'ABS Crunch',
+                title: 'Abs Crunch',
                 desc:
                     'Fold your arms on your chest and tighten your abdominal muscles. Raise your head and shoulders off of the floor. Hold for three deep breaths, then return to starting position. You ll feel tension in the muscles in your abdomen. When you re doing abdominal crunches, don t clasp your hands behind your head.',
                 danger: 'EASY',
