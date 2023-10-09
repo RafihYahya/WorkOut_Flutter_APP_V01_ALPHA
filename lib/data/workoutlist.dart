@@ -216,7 +216,8 @@ class WorkOutList extends ChangeNotifier {
                 title: 'Leg Press',
                 desc:
                     'Leg presses are seated exercises done on a leg press machine. To start, sit with your back against a padded backrest and your feet on two large footrests. Your knees are bent to start the exercise. To move the weight, you must straighten your legs and then return them to the bent position.',
-                danger: 'EASY')),
+                danger: 'EASY',
+                image: '${asset}exec99.webp')),
         Exercise(
             name: 'Squat',
             wheight: '70Kg',
