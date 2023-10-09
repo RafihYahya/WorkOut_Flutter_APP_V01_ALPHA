@@ -33,7 +33,7 @@ class ExecDesc extends StatelessWidget {
                   color: Colors.black54,
                   child: Image(
                       image: AssetImage(execprop.desc!.image),
-                      height: 250,
+                      height: 200,
                       fit: BoxFit.fill),
                 ),
                 Container(
