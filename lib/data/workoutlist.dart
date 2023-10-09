@@ -111,7 +111,7 @@ class WorkOutList extends ChangeNotifier {
             desc: Description(
                 title: 'Lateral Raises',
                 desc:
-                    'A fly or flye is a strength training exercise in which the hand and arm move through an arc while the elbow is kept at a constant angle. Flies are used to work the muscles of the upper body. Because these exercises use the arms as levers at their longest possible length, the amount of weight that can be moved is significantly less than equivalent press exercises for the same muscles (the military press and bench press for the shoulder and chest respectively)',
+                    'Lateral Raises is a strength training exercise in which the hand and arm move through an arc while the elbow is kept at a constant angle. Because these exercises use the arms as levers at their longest possible length, the amount of weight that can be moved is significantly less than equivalent press exercises for the same muscles',
                 danger: 'EASY',
                 image: '${asset}exec09.webp')),
         Exercise(
